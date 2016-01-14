@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>modal-dialog demo</title>
+  <script src="../../../../../bower_components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="../modal-dialog.html">
+</head>
+<body unresolved>
+
+<modal-dialog id="modalDialog" content="some text"
+           dismiss-text="Нет"
+           confirm-text="Да"></modal-dialog>
+
+<script>
+  window.addEventListener('WebComponentsReady', function (e) {
+    var modal = document.querySelector('#modalDialog');
+    modal.open();
+  });
+</script>
+
+</body>
+</html>

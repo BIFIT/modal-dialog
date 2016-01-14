@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>paper-modal basic tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <script src="../../../../../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../../../../bower_components/web-component-tester/browser.js"></script>
+  <script src="../../../../../bower_components/test-fixture/test-fixture-mocha.js"></script>
+  <script src="../../../../../bower_components/iron-test-helpers/mock-interactions.js"></script>
+  <link rel="import" href="../modal-dialog.html">
+  <link rel="import" href="../../../../../bower_components/test-fixture/test-fixture.html">
+</head>
+<body>
+<test-fixture id="ElementModal">
+  <template>
+    <modal-dialog></modal-dialog>
+  </template>
+</test-fixture>
+<script>
+  suite('<paper-modal>', function () {
+    var modal;
+
+    setup(function () {
+      modal = fixture('ElementModal');
+    });
+
+    test('open', function (done) {
+      expect(modal.open).to.exist;
+
+      modal.open();
+      setTimeout(function () {
+        done();
+      }, 1);
+
+    });
+
+    test('close', function (done) {
+      expect(modal.close).to.exist;
+
+      modal.close();
+      setTimeout(function () {
+        done();
+      }, 1);
+
+    });
+
+    test('content', function (done) {
+      modal.setContent('   text    ');
+
+      expect(modal.content).to.be.a('string');
+
+      done();
+    });
+
+  });
+</script>
+</body>
+</html>

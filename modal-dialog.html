@@ -1,0 +1,52 @@
+<link rel="import" href="../../../../bower_components/polymer/polymer.html">
+<link rel="import" href="../../../../bower_components/paper-dialog/paper-dialog.html"/>
+<link rel="import" href="../../../../bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+<link rel="import" href="../../../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../../../bower_components/neon-animation/neon-animatable-behavior.html">
+<link rel="import" href="../../../../bower_components/neon-animation/neon-animations.html">
+
+<dom-module id="modal-dialog">
+
+  <style>
+    paper-dialog {
+      max-width: 330px;
+      max-height: 150px;
+    }
+
+    paper-dialog > .header h2 {
+      color: var(--text-primary-color);
+      font-size: 18px;
+    }
+
+    paper-dialog-scrollable.content {
+      min-height: 30px;
+      display: block;
+    }
+
+    .buttons-container {
+      display: block !important;
+      text-align: end;
+    }
+  </style>
+
+  <template>
+
+    <paper-dialog modal
+                  entry-animation="scale-up-animation"
+                  exit-animation="fade-out-animation">
+
+      <paper-dialog-scrollable class="content">[[content]]</paper-dialog-scrollable>
+
+      <div class="buttons-container">
+        <paper-button dialog-dismiss
+                      autofocus>[[dismissText]]</paper-button>
+        <paper-button dialog-confirm
+                      on-click="onConfirm">[[confirmText]]</paper-button>
+      </div>
+    </paper-dialog>
+
+  </template>
+
+  <script src="./modal-dialog.js" inline></script>
+
+</dom-module>
