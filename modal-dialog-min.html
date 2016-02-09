@@ -47,39 +47,6 @@
 
   </template>
 
-  <script>"use strict";
-new Polymer({
-  is: 'modal-dialog',
-  properties: {
-    content: String,
-    dismissText: {
-      type: String,
-      value: function() {
-        return 'ОТМЕНА';
-      }
-    },
-    confirmText: {
-      type: String,
-      value: function() {
-        return 'ОТКЛЮЧИТЬ';
-      }
-    }
-  },
-  onConfirm: function() {
-    console.warn('override this!');
-  },
-  setContent: function(text) {
-    this.content = text.trim();
-  },
-  open: function(onConfirmCallback) {
-    this.$$('[modal]').open();
-    this.onConfirm = onConfirmCallback;
-  },
-  close: function() {
-    this.$$('[modal]').close();
-  }
-});
-//# sourceURL=<compile-source>
-</script>
+  <script>"use strict";new Polymer({is:"modal-dialog",properties:{content:String,dismissText:{type:String,value:function(){return"ОТМЕНА"}},confirmText:{type:String,value:function(){return"ОТКЛЮЧИТЬ"}}},onConfirm:function(){console.warn("override this!")},setContent:function(n){this.content=n.trim()},open:function(n){this.$$("[modal]").open(),this.onConfirm=n},close:function(){this.$$("[modal]").close()}});</script>
 
 </dom-module>
