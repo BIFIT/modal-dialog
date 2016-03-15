@@ -38,6 +38,9 @@ new Polymer({
    * Открыть модальное окно
    */
   open (onConfirmCallback) {
+
+    NOTIFICATION.hideAllNotifications();
+
     this.$$('[modal]').open();
 
     this.onConfirm = onConfirmCallback;
